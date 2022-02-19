@@ -14,3 +14,5 @@ LETS Go!
 Navigate to [localhost:3000](http://localhost:8080). You should see your app running.
 
 Edit a component file in `public/main.js`, save it, and reload the page to see your changes.
+
+![image info](./resources/screenCap.png)
