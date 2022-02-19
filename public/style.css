@@ -5,8 +5,8 @@ canvas {
 }
 
 :root {
-  --dark-bg: rgba(15, 15, 15, 0.95);
-  --spacing: 350px;
+  --dark-bg: rgba(51, 51, 51, 0.95);
+  --spacing: 50%;
 
   font-family: brandon-grotesque, sans-serif;
   font-weight: 400;
@@ -14,14 +14,12 @@ canvas {
 }
 
 main {
-  width: 100vw;
   color: white;
-  z-index: 99;
   position: absolute;
-  width: 100%;
+}
+.main {
   margin: 0px auto;
   padding: 120px 0px;
-
   display: grid;
   grid-template-columns: repeat(12, 1fr);
 }
@@ -42,11 +40,58 @@ canvas {
 }
 
 header {
-  background: var(--dark-bg);
-  grid-column: 2 / span 5;
-  font-size: 2.5rem;
-  padding: 2rem;
-  margin-bottom: var(--spacing);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 5%;
+  background-color: #00000000;
+}
+
+.stickToMe {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 99999;
+}
+
+.logo {
+  cursor: pointer;
+  order: 3;
+  margin-left: auto;
+}
+.navC {
+  order: 1;
+}
+.nav__links {
+  cursor: pointer;
+  list-style: none;
+  text-align: center;
+}
+.nav__links li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.nav__links li a {
+  transition: all 0.3s ease 0s;
+}
+.nav__links li a:hover {
+  color: #253542;
+}
+.contactButton {
+  padding: 9px 20px;
+  background-color: #5c4fbd;
+  border: none;
+  border-radius: 50px;
+  transition: all 0.3s ease 0s;
+  margin-right: 20px;
+}
+.contactButton:hover {
+  background-color: #5c4fbd86;
+}
+.cta {
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 section {
