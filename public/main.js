@@ -7,7 +7,7 @@ import * as THREE from "three";
 const scene = new THREE.Scene();
 
 const camera = new THREE.PerspectiveCamera(
-  65,
+  100,
   window.innerWidth / window.innerHeight,
   0.1,
   1000
@@ -43,7 +43,7 @@ function addStars() {
   stars.position.set(x, y, z);
   scene.add(stars);
 }
-Array(400).fill().forEach(addStars);
+Array(500).fill().forEach(addStars);
 
 const geoCube1 = new THREE.BoxGeometry(1, 2, 3);
 const matCube1 = new THREE.MeshBasicMaterial({ color: 0x7500dd });
