@@ -15,6 +15,8 @@ canvas {
 main {
   color: white;
   position: absolute;
+  top: 0;
+  left: 0;
 }
 .main {
   margin: 0px auto;
@@ -43,7 +45,9 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 30px 5%;
-  background-color: #00000000;
+  color: #253542;
+  background-color: rgba(0, 255, 106, 0.938);
+  border-radius: 5px;
 }
 
 .stickToMe {
@@ -96,6 +100,7 @@ header {
 section {
   grid-column: 2 / 8;
   padding: 1rem;
+  border-radius: 15px;
   background: var(--dark-bg);
   font-size: 1.25rem;
   line-height: 1.5;

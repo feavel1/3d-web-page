@@ -45,15 +45,15 @@ function addStars() {
 }
 Array(500).fill().forEach(addStars);
 
-const geoCube1 = new THREE.BoxGeometry(1, 2, 3);
+const geoCube1 = new THREE.BoxGeometry(5, 2, 3);
 const matCube1 = new THREE.MeshBasicMaterial({ color: 0x7500dd });
 const cube1 = new THREE.Mesh(geoCube1, matCube1);
-cube1.position.set(-1, -10, 20);
+cube1.position.set(-1, -10, 10);
 
 const geoCone1 = new THREE.ConeGeometry(1, 5, 20);
 const matCone1 = new THREE.MeshStandardMaterial({ color: 0x00dd75 });
 const cone1 = new THREE.Mesh(geoCone1, matCone1);
-cone1.position.set(1, -2, 5);
+cone1.position.set(10, -10, 5);
 
 scene.add(torus, cube1, cone1);
 
@@ -80,7 +80,7 @@ function torusAnimate() {
 }
 
 function cube1Animate() {
-  cube1.rotation.y += 0.03;
+  cube1.rotation.y += 0.003;
 }
 
 function cone1Animate() {
@@ -112,8 +112,12 @@ window.addEventListener("scroll", updateCamera);
 
 camera.position.setZ(30);
 camera.position.setY(-10);
+camera.position.setX(5);
 function updateCamera() {
   const t = window.scrollY;
+  cube1.rotation.x += 0.08;
+  cone1.rotation.x += 0.08;
   camera.position.setZ(30 - t * 0.05);
-  camera.position.setY(-10 - t * -0.01);
+  camera.position.setY(-10 - t * t * -0.000015);
+  camera.position.setX(5 - t * t * 0.000019);
 }
