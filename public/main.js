@@ -7,14 +7,14 @@ import * as THREE from "three";
 const scene = new THREE.Scene();
 
 const camera = new THREE.PerspectiveCamera(
-  100,
-  window.innerWidth / window.innerHeight,
-  0.1,
-  1000
+    100,
+    window.innerWidth / window.innerHeight,
+    0.1,
+    1000
 );
 
 const renderer = new THREE.WebGLRenderer({
-  canvas: document.querySelector("#bg"),
+    canvas: document.querySelector("#bg"),
 });
 
 renderer.setPixelRatio(window.devicePixelRatio);
@@ -36,12 +36,12 @@ const geoStars = new THREE.SphereGeometry(0.25, 24, 24);
 const matStars = new THREE.MeshBasicMaterial({ color: 0x44fff1 });
 
 function addStars() {
-  const stars = new THREE.Mesh(geoStars, matStars);
-  const [x, y, z] = Array(3)
-    .fill()
-    .map(() => THREE.MathUtils.randFloatSpread(100));
-  stars.position.set(x, y, z);
-  scene.add(stars);
+    const stars = new THREE.Mesh(geoStars, matStars);
+    const [x, y, z] = Array(3)
+        .fill()
+        .map(() => THREE.MathUtils.randFloatSpread(100));
+    stars.position.set(x, y, z);
+    scene.add(stars);
 }
 Array(500).fill().forEach(addStars);
 
@@ -74,25 +74,25 @@ scene.add(pointLight, ambientLight);
 ////////////////Animate///////////////
 
 function torusAnimate() {
-  torus.rotation.x += 0.01;
-  torus.rotation.y += 0.005;
-  torus.rotation.z += 0.001;
+    torus.rotation.x += 0.01;
+    torus.rotation.y += 0.005;
+    torus.rotation.z += 0.001;
 }
 
 function cube1Animate() {
-  cube1.rotation.y += 0.003;
+    cube1.rotation.y += 0.003;
 }
 
 function cone1Animate() {
-  cone1.rotation.x += 0.01;
+    cone1.rotation.x += 0.01;
 }
 
 function animate() {
-  requestAnimationFrame(animate);
-  torusAnimate();
-  cube1Animate();
-  cone1Animate();
-  renderer.render(scene, camera);
+    requestAnimationFrame(animate);
+    torusAnimate();
+    cube1Animate();
+    cone1Animate();
+    renderer.render(scene, camera);
 }
 animate();
 
@@ -114,10 +114,10 @@ camera.position.setZ(30);
 camera.position.setY(-10);
 camera.position.setX(5);
 function updateCamera() {
-  const t = window.scrollY;
-  cube1.rotation.x += 0.08;
-  cone1.rotation.x += 0.08;
-  camera.position.setZ(30 - t * 0.05);
-  camera.position.setY(-10 - t * t * -0.000015);
-  camera.position.setX(5 - t * t * 0.000019);
+    const t = window.scrollY;
+    cube1.rotation.x += 0.08;
+    cone1.rotation.x += 0.08;
+    camera.position.setZ(30 - t * 0.05);
+    camera.position.setY(-10 - t * t * -0.000015);
+    camera.position.setX(5 - t * t * 0.000019);
 }
